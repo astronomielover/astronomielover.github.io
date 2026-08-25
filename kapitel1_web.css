@@ -1,0 +1,72 @@
+/* Kapitel-Leseprobe */
+.chapter {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.chapter-title {
+    margin: 0 0 1.25rem;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.chapter-image {
+    text-align: center;
+    margin: 0 0 2rem;
+}
+
+.chapter-image img {
+    width: 4.5rem;
+    max-width: 18%;
+    height: auto;
+}
+
+.chapter p {
+    margin: 0 0 0.75rem;
+    text-align: left;
+}
+
+.chapter p + p {
+    text-indent: 1.5em;
+}
+
+.chapter .chapter-start {
+    text-indent: 0;
+}
+
+.chapter .chapter-start::first-letter {
+    float: left;
+    font-size: 3.5em;
+    line-height: 0.9;
+    margin-right: 0.04em;
+    margin-top: 0.05em;
+}
+
+.scene-break {
+    margin: 2rem 0;
+    text-align: center;
+    clear: both;
+}
+
+.scene-break img {
+    width: 3.5rem;
+    max-width: 16%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .chapter {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1rem;
+    }
+
+    .chapter-title {
+        font-size: 1.7rem;
+    }
+}
