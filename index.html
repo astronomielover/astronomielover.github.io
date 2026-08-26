@@ -138,7 +138,313 @@
       font-size: 0.8rem;
       color: #958878;
     }
+  /* =========================================
+   NWO ACCESS SCREEN
+   ========================================= */
 
+body.nwo-locked {
+  overflow: hidden;
+}
+
+.nwo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(30, 25, 20, 0.25),
+      rgba(3, 3, 5, 0.98) 65%
+    );
+
+  backdrop-filter: blur(8px);
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.nwo-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nwo-access-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 680px;
+
+  padding: 50px 42px;
+
+  text-align: center;
+
+  border: 1px solid rgba(201, 164, 106, 0.55);
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      rgba(12, 12, 17, 0.96),
+      rgba(7, 7, 10, 0.98)
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 30px 90px rgba(0, 0, 0, 0.75),
+    0 0 60px rgba(201, 164, 106, 0.08);
+
+  overflow: hidden;
+}
+
+/* subtile Aktenlinien */
+
+.nwo-access-card::before,
+.nwo-access-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 164, 106, 0.35),
+      transparent
+    );
+}
+
+.nwo-access-card::before {
+  top: 20px;
+}
+
+.nwo-access-card::after {
+  bottom: 20px;
+}
+
+.nwo-system {
+  margin-bottom: 7px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+
+  color: #c9a46a;
+}
+
+.nwo-clearance {
+  margin-bottom: 28px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.68rem;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #807465;
+}
+
+.nwo-stamp {
+  display: inline-block;
+
+  margin-bottom: 28px;
+
+  padding: 8px 18px;
+
+  border: 2px solid #c9a46a;
+
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: #c9a46a;
+
+  transform: rotate(-4deg);
+
+  animation: nwo-stamp-in 0.65s ease-out both;
+
+  box-shadow:
+    inset 0 0 18px rgba(201, 164, 106, 0.08);
+}
+
+@keyframes nwo-stamp-in {
+  from {
+    opacity: 0;
+    transform:
+      scale(1.6)
+      rotate(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      scale(1)
+      rotate(-4deg);
+  }
+}
+
+.nwo-access-card h2 {
+  margin-bottom: 20px;
+
+  font-size: clamp(2rem, 5vw, 3.4rem);
+
+  font-weight: 500;
+  line-height: 1;
+
+  color: #fff7ee;
+}
+
+.nwo-message {
+  max-width: 550px;
+
+  margin: 0 auto 24px;
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  color: #d8c6ad;
+}
+
+.nwo-question {
+  margin-bottom: 28px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #f4eee6;
+}
+
+.nwo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.nwo-button {
+  cursor: pointer;
+
+  padding: 14px 22px;
+
+  border-radius: 999px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.nwo-button:hover {
+  transform: translateY(-2px);
+}
+
+.nwo-button.primary {
+  border: 1px solid #c9a46a;
+
+  background: #c9a46a;
+
+  color: #130f0c;
+}
+
+.nwo-button.secondary {
+  border:
+    1px solid rgba(255, 255, 255, 0.28);
+
+  background: transparent;
+
+  color: #d8c6ad;
+}
+
+.nwo-button.secondary:hover {
+  background:
+    rgba(255, 255, 255, 0.05);
+}
+
+.nwo-warning {
+  margin-top: 30px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.67rem;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #6f655a;
+}
+
+/* ACCESS DENIED SCREEN */
+
+.nwo-access-card.denied
+.nwo-message,
+.nwo-access-card.denied
+.nwo-question {
+  display: none;
+}
+
+.nwo-access-card.denied
+.nwo-stamp {
+  color: #c9a46a;
+}
+
+.nwo-denied-message {
+  margin: 25px 0;
+
+  font-size: 1.25rem;
+  font-style: italic;
+
+  color: #d8c6ad;
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+
+  .nwo-access-card {
+    padding: 42px 24px;
+  }
+
+  .nwo-buttons {
+    flex-direction: column;
+  }
+
+  .nwo-button {
+    width: 100%;
+  }
+}
     @media (max-width: 520px) {
       .card {
         padding: 38px 24px;
@@ -155,6 +461,61 @@
   </style>
 </head>
 <body>
+  <div id="nwo-overlay" class="nwo-overlay">
+  <div class="nwo-access-card">
+
+    <p class="nwo-system">
+      NWO CENTRAL INTELLIGENCE
+    </p>
+
+    <p class="nwo-clearance">
+      SECURITY CLEARANCE REQUIRED
+    </p>
+
+    <div class="nwo-stamp">
+      TOP SECRET
+    </div>
+
+    <h2>
+      Unauthorized Access Detected
+    </h2>
+
+    <p class="nwo-message">
+      Du bist dabei, auf klassifizierte Informationen der NWO zuzugreifen.
+      Personenakten, aufgezeichnete Routen und vertrauliche Dokumente
+      enthalten Informationen, die niemals für deine Augen bestimmt waren.
+    </p>
+
+    <p class="nwo-question">
+      Bist du sicher, dass du fortfahren möchtest?
+    </p>
+
+    <div class="nwo-buttons">
+
+      <button
+        id="enter-nwo"
+        class="nwo-button primary"
+        type="button"
+      >
+        Access Classified Files
+      </button>
+
+      <button
+        id="abort-nwo"
+        class="nwo-button secondary"
+        type="button"
+      >
+        Abort Mission
+      </button>
+
+    </div>
+
+    <p class="nwo-warning">
+      Unauthorized access will be documented.
+    </p>
+
+  </div>
+</div>
   <main class="page">
     <section class="card">
       <p class="eyebrow">Dark Dystopian Romance</p>
@@ -209,5 +570,136 @@ Dark Academia, morally grey Love Interests und Why-Choose-Romance bringen nicht 
       </footer>
     </section>
   </main>
+  <script>
+
+  const overlay =
+    document.getElementById('nwo-overlay');
+
+  const enterButton =
+    document.getElementById('enter-nwo');
+
+  const abortButton =
+    document.getElementById('abort-nwo');
+
+  const accessCard =
+    document.querySelector('.nwo-access-card');
+
+
+  /*
+  ==========================================
+  PRÜFEN, OB ZUGANG SCHON BESTÄTIGT WURDE
+  ==========================================
+  */
+
+  const accessGranted =
+    localStorage.getItem('nwoAccessGranted');
+
+
+  if (accessGranted === 'true') {
+
+    overlay.classList.add('hidden');
+
+  } else {
+
+    document.body.classList.add('nwo-locked');
+
+  }
+
+
+  /*
+  ==========================================
+  ACCESS CLASSIFIED FILES
+  ==========================================
+  */
+
+  enterButton.addEventListener(
+    'click',
+    function () {
+
+      localStorage.setItem(
+        'nwoAccessGranted',
+        'true'
+      );
+
+      overlay.classList.add('hidden');
+
+      document.body.classList.remove(
+        'nwo-locked'
+      );
+
+    }
+  );
+
+
+  /*
+  ==========================================
+  ABORT MISSION
+  ==========================================
+  */
+
+  abortButton.addEventListener(
+    'click',
+    function () {
+
+      accessCard.classList.add('denied');
+
+      accessCard.innerHTML = `
+
+        <p class="nwo-system">
+          NWO CENTRAL INTELLIGENCE
+        </p>
+
+        <p class="nwo-clearance">
+          CONNECTION TERMINATED
+        </p>
+
+        <div class="nwo-stamp">
+          ACCESS DENIED
+        </div>
+
+        <h2>
+          A Wise Decision.
+        </h2>
+
+        <p class="nwo-denied-message">
+          Manche Geheimnisse sollten besser
+          im Schatten bleiben.
+        </p>
+
+        <button
+          id="return-nwo"
+          class="nwo-button secondary"
+          type="button"
+        >
+          Return
+        </button>
+
+        <p class="nwo-warning">
+          Session terminated by user.
+        </p>
+
+      `;
+
+
+      /*
+      Neuer RETURN Button,
+      weil der alte Inhalt ersetzt wurde.
+      */
+
+      document
+        .getElementById('return-nwo')
+        .addEventListener(
+          'click',
+          function () {
+
+            location.reload();
+
+          }
+        );
+
+    }
+  );
+
+</script>
 </body>
 </html>
