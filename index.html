@@ -1083,7 +1083,29 @@ Dark Academia, morally grey Love Interests und Why-Choose-Romance bringen nicht 
   ==========================================
   */
 
+  const params = new URLSearchParams(window.location.search);
+const returningFromNWO = params.get('return') === 'true';
+
+  // Besucher kommt von einer Unterseite zurück
+  if (returningFromNWO) {
+
+  overlay.classList.add('hidden');
+
+  document.body.classList.remove('nwo-locked');
+
+  // ?return=true aus der URL entfernen
+  window.history.replaceState(
+    {},
+    document.title,
+    window.location.pathname
+  );
+
+} else {
+
+  // Normaler Besuch → Sicherheitskontrolle
   document.body.classList.add('nwo-locked');
+
+}
 
 
   /*
