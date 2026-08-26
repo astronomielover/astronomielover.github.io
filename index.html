@@ -1083,19 +1083,7 @@ Dark Academia, morally grey Love Interests und Why-Choose-Romance bringen nicht 
   ==========================================
   */
 
-  const accessGranted =
-    localStorage.getItem('nwoAccessGranted');
-
-
-  if (accessGranted === 'true') {
-
-    overlay.classList.add('hidden');
-
-  } else {
-
-    document.body.classList.add('nwo-locked');
-
-  }
+  document.body.classList.add('nwo-locked');
 
 
   /*
@@ -1107,11 +1095,6 @@ Dark Academia, morally grey Love Interests und Why-Choose-Romance bringen nicht 
   enterButton.addEventListener(
     'click',
     function () {
-
-      localStorage.setItem(
-        'nwoAccessGranted',
-        'true'
-      );
 
       overlay.classList.add('hidden');
 
