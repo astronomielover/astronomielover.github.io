@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Lia Bansmann | And After Us The Shadows</title>
+  <title>Lia Bansmann | Autorin</title>
 
   <meta
     name="description"
-    content="Die offizielle Website von Lia Bansmann und And After Us The Shadows."
+    content="Die offizielle Website von Lia Bansmann. Düstere Geschichten, gefährliche Welten und Charaktere, denen man besser nicht vertrauen sollte."
   />
 
   <style>
@@ -28,239 +28,680 @@
       font-family: Georgia, "Times New Roman", serif;
 
       background:
-        linear-gradient(
-          rgba(5, 5, 8, 0.72),
-          rgba(5, 5, 8, 0.94)
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(201, 164, 106, 0.08),
+          transparent 35%
         ),
-        url("cover.png");
+        linear-gradient(
+          180deg,
+          #090909 0%,
+          #0d0c0c 45%,
+          #080808 100%
+        );
 
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      color: #f3eee7;
 
-      color: #f4eee6;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* ========================================
-       PAGE
-       ======================================== */
+    a {
+      color: inherit;
+    }
 
-    .page {
+    /* =========================================
+       NAVIGATION
+       ========================================= */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      z-index: 1000;
+
+      width: 100%;
+
+      background: rgba(8, 8, 8, 0.78);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 40px));
+
+      margin: 0 auto;
+
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: Arial, sans-serif;
+
+      font-size: 0.8rem;
+      font-weight: 700;
+
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      color: #e8d6ba;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-family: Arial, sans-serif;
+
+      font-size: 0.68rem;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      color: #9f9589;
+
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #d7ba8e;
+    }
+
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero {
       min-height: 100vh;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 44px 20px;
+      padding:
+        130px 20px
+        80px;
     }
 
-    .hero {
-      position: relative;
-
-      width: 100%;
-      max-width: 900px;
-
-      padding: 60px 52px;
+    .hero-inner {
+      width: min(1000px, 100%);
 
       text-align: center;
-
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 30px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(17, 17, 24, 0.78),
-          rgba(8, 8, 12, 0.88)
-        );
-
-      backdrop-filter: blur(14px);
-
-      box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.55),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.025);
-
-      overflow: hidden;
     }
 
-    /* dezente goldene Linie */
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-      top: 0;
-      left: 15%;
-      right: 15%;
-
-      height: 1px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(201, 164, 106, 0.8),
-          transparent
-        );
-    }
-
-    /* ========================================
-       HEADER
-       ======================================== */
-
-    .author-name {
-      margin-bottom: 30px;
+    .hero-eyebrow {
+      margin-bottom: 25px;
 
       font-family: Arial, sans-serif;
+
       font-size: 0.72rem;
-      font-weight: 700;
 
       letter-spacing: 0.3em;
       text-transform: uppercase;
 
-      color: #c9a46a;
+      color: #b28d5d;
     }
 
-    .eyebrow {
-      margin-bottom: 15px;
+    .hero h1 {
+      font-size:
+        clamp(4.5rem, 12vw, 9rem);
+
+      line-height: 0.82;
+
+      font-weight: 400;
+
+      letter-spacing: -0.07em;
+
+      color: #f8f3ec;
+    }
+
+    .hero-tagline {
+      max-width: 650px;
+
+      margin:
+        38px auto 0;
+
+      font-size:
+        clamp(1.2rem, 2.5vw, 1.7rem);
+
+      font-style: italic;
+
+      color: #cbbcac;
+    }
+
+    .hero-text {
+      max-width: 620px;
+
+      margin:
+        24px auto 0;
 
       font-family: Arial, sans-serif;
-      font-size: 0.72rem;
+
+      font-size: 0.92rem;
+
+      line-height: 1.8;
+
+      color: #91877e;
+    }
+
+    .scroll-indicator {
+      margin-top: 65px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 0.62rem;
+
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+
+      color: #655d56;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+
+      margin:
+        14px auto 0;
+
+      background:
+        linear-gradient(
+          #9c7b50,
+          transparent
+        );
+    }
+/* =========================================
+   SERIES
+   ========================================= */
+
+.series {
+  padding: 45px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 19, 19, 0.92),
+      rgba(10, 10, 10, 0.97)
+    );
+}
+
+.series-header {
+  max-width: 700px;
+
+  margin-bottom: 45px;
+}
+
+.series-label {
+  margin-bottom: 10px;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.65rem;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: #a4845c;
+}
+
+.series-header h3 {
+  margin-bottom: 18px;
+
+  font-size:
+    clamp(3rem, 6vw, 5rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.series-description {
+  color: #988d83;
+
+  max-width: 650px;
+}
+
+.series-books {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.book-card {
+  position: relative;
+
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 34px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(201, 164, 106, 0.32);
+
+  background:
+    rgba(201, 164, 106, 0.025);
+}
+
+.book-number {
+  margin-bottom: auto;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #675c52;
+}
+
+.book-label {
+  margin-bottom: 10px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: #9b805d;
+}
+
+.book-card h4 {
+  font-size:
+    clamp(2.2rem, 4vw, 3.4rem);
+
+  line-height: 0.98;
+
+  font-weight: 400;
+
+  color: #f2ebe4;
+}
+
+.book-genre {
+  margin-top: 14px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.66rem;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #81776e;
+}
+
+.book-description {
+  margin-top: 20px;
+
+  color: #afa298;
+}
+
+.book-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+
+/* =========================================
+   FUTURE SERIES
+   ========================================= */
+
+.future-series {
+  margin-top: 30px;
+
+  min-height: 160px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border:
+    1px dashed rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: #625b55;
+}
+
+.future-symbol {
+  font-family: Georgia, serif;
+
+  font-size: 1.8rem;
+
+  color: #725e45;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+  .series {
+    padding: 28px;
+  }
+
+  .series-books {
+    grid-template-columns: 1fr;
+  }
+
+}
+    /* =========================================
+       GENERIC SECTION
+       ========================================= */
+
+    .section {
+      padding:
+        110px 20px;
+    }
+
+    .section-inner {
+      width: min(1120px, 100%);
+
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      margin-bottom: 55px;
+    }
+
+    .section-number {
+      margin-bottom: 10px;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 0.65rem;
 
       letter-spacing: 0.2em;
       text-transform: uppercase;
 
-      color: #9f9180;
+      color: #856c4d;
     }
 
-    h1 {
-      margin-bottom: 18px;
+    .section-heading h2 {
+      font-size:
+        clamp(2.8rem, 6vw, 5rem);
 
-      font-size: clamp(3rem, 8vw, 5.8rem);
+      line-height: 1;
 
-      line-height: 0.92;
-      letter-spacing: -0.055em;
+      font-weight: 400;
 
-      font-weight: 500;
-
-      color: #fffaf4;
+      color: #f0e9e1;
     }
 
-    .subtitle {
-      margin-bottom: 34px;
+    .section-heading p {
+      max-width: 550px;
+
+      margin-top: 18px;
 
       font-family: Arial, sans-serif;
+
       font-size: 0.9rem;
 
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-
-      color: #d8c6ad;
+      color: #877d74;
     }
 
-    /* ========================================
-       INTRO
-       ======================================== */
+    /* =========================================
+       BOOKS
+       ========================================= */
 
-    .intro {
-      max-width: 650px;
+    .books-section {
+      border-top:
+        1px solid rgba(255, 255, 255, 0.05);
 
-      margin: 0 auto 36px;
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
 
-      font-size: 1.08rem;
-
-      color: #ddd2c5;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.01),
+          rgba(201, 164, 106, 0.025),
+          rgba(255, 255, 255, 0.01)
+        );
     }
 
-    /* ========================================
-       DIVIDER
-       ======================================== */
+    .books-grid {
+      display: grid;
 
-    .divider {
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+      gap: 28px;
+    }
+
+    .book-card {
+      position: relative;
+
+      min-height: 430px;
+
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-end;
 
-      gap: 14px;
+      padding: 36px;
 
-      width: 70%;
+      overflow: hidden;
 
-      margin: 0 auto 36px;
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 19, 19, 0.95),
+          rgba(10, 10, 10, 0.98)
+        );
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
     }
 
-    .divider::before,
-    .divider::after {
+    .book-card:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(201, 164, 106, 0.35);
+    }
+
+    .book-card::before {
       content: "";
 
-      flex: 1;
+      position: absolute;
 
-      height: 1px;
+      top: -80px;
+      right: -80px;
+
+      width: 240px;
+      height: 240px;
+
+      border-radius: 50%;
 
       background:
-        linear-gradient(
-          90deg,
-          transparent,
-          rgba(201, 164, 106, 0.4)
+        radial-gradient(
+          circle,
+          rgba(201, 164, 106, 0.1),
+          transparent 65%
         );
     }
 
-    .divider::after {
-      background:
-        linear-gradient(
-          90deg,
-          rgba(201, 164, 106, 0.4),
-          transparent
-        );
+    .book-label {
+      margin-bottom: auto;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 0.63rem;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      color: #8d7556;
     }
 
-    .divider-symbol {
-      color: #c9a46a;
+    .book-card h3 {
+      max-width: 450px;
 
-      font-size: 0.8rem;
+      font-size:
+        clamp(2.3rem, 4vw, 3.8rem);
+
+      line-height: 0.98;
+
+      font-weight: 400;
+
+      color: #f4eee6;
     }
 
-    /* ========================================
-       BUTTONS
-       ======================================== */
+    .book-genre {
+      margin-top: 15px;
 
-    .buttons {
+      font-family: Arial, sans-serif;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      color: #91867a;
+    }
+
+    .book-description {
+      max-width: 500px;
+
+      margin-top: 22px;
+
+      color: #b7aaa0;
+    }
+
+    .book-actions {
       display: flex;
       flex-wrap: wrap;
 
-      justify-content: center;
+      gap: 12px;
 
-      gap: 14px;
-
-      margin-top: 10px;
+      margin-top: 28px;
     }
+
+    /* future card */
+
+    .book-card.future {
+      min-height: 430px;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      border-style: dashed;
+
+      opacity: 0.65;
+    }
+
+    .future-symbol {
+      margin-bottom: 20px;
+
+      font-size: 2rem;
+
+      color: #80694d;
+    }
+
+    .future-text {
+      font-family: Arial, sans-serif;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      color: #746b62;
+    }
+
+    /* =========================================
+       BUTTONS
+       ========================================= */
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      min-height: 52px;
+      min-height: 48px;
 
-      padding: 14px 25px;
+      padding:
+        13px 22px;
 
       border-radius: 999px;
 
       font-family: Arial, sans-serif;
-      font-size: 0.78rem;
+
+      font-size: 0.7rem;
       font-weight: 700;
 
-      letter-spacing: 0.09em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
 
       text-decoration: none;
 
       transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        background 0.2s ease;
     }
 
     .button:hover {
@@ -268,241 +709,558 @@
     }
 
     .button.primary {
-      border: 1px solid #c9a46a;
+      background: #c4a06d;
 
-      background:
-        linear-gradient(
-          135deg,
-          #d5b47d,
-          #b88d52
-        );
+      border:
+        1px solid #c4a06d;
 
-      color: #130f0c;
-
-      box-shadow:
-        0 8px 28px rgba(201, 164, 106, 0.13);
-    }
-
-    .button.primary:hover {
-      box-shadow:
-        0 10px 35px rgba(201, 164, 106, 0.25);
+      color: #11100e;
     }
 
     .button.secondary {
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+      color: #d9d0c7;
 
       background:
         rgba(255, 255, 255, 0.015);
-
-      color: #eee3d6;
     }
 
     .button.secondary:hover {
-      background:
-        rgba(255, 255, 255, 0.055);
-
       border-color:
-        rgba(201, 164, 106, 0.45);
+        rgba(201, 164, 106, 0.4);
+
+      background:
+        rgba(201, 164, 106, 0.05);
     }
 
-    /* besonderer World Button */
+    /* =========================================
+       ABOUT
+       ========================================= */
 
-    .button.world {
-      position: relative;
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        0.85fr 1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .about-ornament {
+      aspect-ratio: 4 / 5;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       border:
-        1px solid rgba(201, 164, 106, 0.5);
-
-      color: #d9bd92;
+        1px solid rgba(201, 164, 106, 0.18);
 
       background:
-        linear-gradient(
-          135deg,
-          rgba(201, 164, 106, 0.08),
-          rgba(255, 255, 255, 0.01)
+        radial-gradient(
+          circle,
+          rgba(201, 164, 106, 0.07),
+          transparent 60%
         );
 
-      overflow: hidden;
+      font-size: 5rem;
+
+      color: rgba(201, 164, 106, 0.2);
     }
 
-    .button.world::after {
-      content: "›";
+    .about-content h2 {
+      font-size:
+        clamp(2.8rem, 6vw, 4.8rem);
 
-      margin-left: 10px;
+      font-weight: 400;
 
-      font-size: 1.1rem;
+      line-height: 1;
 
-      transition:
-        transform 0.2s ease;
+      margin-bottom: 25px;
     }
 
-    .button.world:hover::after {
-      transform: translateX(4px);
+    .about-content p {
+      max-width: 590px;
+
+      margin-bottom: 18px;
+
+      color: #bdb1a6;
     }
 
-    .button.world:hover {
-      background:
-        rgba(201, 164, 106, 0.1);
-
-      box-shadow:
-        0 8px 30px rgba(201, 164, 106, 0.09);
+    .about-actions {
+      margin-top: 32px;
     }
 
-    /* ========================================
-       SMALL NOTE
-       ======================================== */
+    /* =========================================
+       SOCIAL / FOOTER
+       ========================================= */
 
-    .world-note {
-      margin-top: 26px;
+    .social-section {
+      padding:
+        90px 20px;
+
+      text-align: center;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .social-title {
+      font-size:
+        clamp(2.2rem, 5vw, 4rem);
+
+      font-weight: 400;
+
+      margin-bottom: 18px;
+    }
+
+    .social-text {
+      max-width: 500px;
+
+      margin:
+        0 auto 28px;
 
       font-family: Arial, sans-serif;
-      font-size: 0.7rem;
 
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: 0.85rem;
 
-      color: #766b60;
+      color: #867b72;
     }
-
-    /* ========================================
-       FOOTER
-       ======================================== */
 
     footer {
-      margin-top: 45px;
+      padding:
+        25px 20px 40px;
+
+      text-align: center;
 
       font-family: Arial, sans-serif;
-      font-size: 0.75rem;
 
-      color: #756a5f;
+      font-size: 0.68rem;
+
+      color: #655d57;
     }
 
-    /* ========================================
+    /* =========================================
        MOBILE
-       ======================================== */
+       ========================================= */
 
-    @media (max-width: 620px) {
+    @media (max-width: 760px) {
 
-      .page {
-        padding: 24px 14px;
+      .nav-inner {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 0.58rem;
       }
 
       .hero {
-        padding: 44px 24px;
-
-        border-radius: 24px;
+        padding-top: 120px;
       }
 
-      .buttons {
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .about-ornament {
+        max-height: 380px;
+      }
+
+      .section {
+        padding:
+          80px 18px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .nav-links a:nth-child(2) {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(4rem, 20vw, 6rem);
+      }
+
+      .book-card {
+        padding: 28px;
+      }
+
+      .book-actions {
         flex-direction: column;
       }
 
       .button {
         width: 100%;
       }
-
-      .divider {
-        width: 90%;
-      }
-
-      .intro {
-        font-size: 1rem;
-      }
     }
   </style>
 </head>
 
-
 <body>
 
-  <main class="page">
+  <!-- NAVIGATION -->
 
-    <section class="hero">
+  <nav class="nav">
 
-      <p class="author-name">
+    <div class="nav-inner">
+
+      <a class="logo" href="#">
         Lia Bansmann
-      </p>
+      </a>
 
-      <p class="eyebrow">
-        Dark Dystopian Romance
-      </p>
+      <div class="nav-links">
 
-      <h1>
-        And After Us<br />
-        The Shadows
-      </h1>
+        <a href="#books">
+          Books
+        </a>
 
-      <p class="subtitle">
-        A novel by Lia Bansmann
-      </p>
-
-
-      <p class="intro">
-        In einer düsteren, postapokalyptischen Welt trifft Dystopie auf Dark Romance.
-Dark Academia, morally grey Love Interests und Why-Choose-Romance bringen nicht nur reichlich Spice, 
-        sondern auch messerscharfen Sarkasmus und eine Anziehung, die ebenso zerstörerisch wie unwiderstehlich ist.
-      </p>
-
-
-      <div class="divider">
-        <span class="divider-symbol">◆</span>
-      </div>
-
-
-      <div class="buttons">
-
-        <!-- BUCH KAUFEN -->
+        <a href="#about">
+          About
+        </a>
 
         <a
-          class="button primary"
-          href="https://amzn.eu/d/0i41bcvM"
+          href="https://www.instagram.com/lia.writesstories/"
           target="_blank"
           rel="noopener"
         >
-          And After Us The Shadows kaufen
-        </a>
-
-
-        <!-- ABOUT THE AUTHOR -->
-
-        <a
-          class="button secondary"
-          href="author.html"
-        >
-          About the Author
-        </a>
-
-
-        <!-- WORLD OF AFTER US -->
-
-        <a
-          class="button world"
-          href="after-us/index.html"
-        >
-          Enter the World
-        </a>
-        <!-- Ersetze den Link unten durch dein Instagram-Profil -->
-        <a class="button secondary" href="https://www.instagram.com/lia.writesstories/" target="_blank" rel="noopener">
           Instagram
         </a>
 
       </div>
 
-      
+    </div>
+
+  </nav>
 
 
-      <p class="world-note">
-        Some stories don't end on the final page.
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-inner">
+
+      <p class="hero-eyebrow">
+        Author of dark stories
       </p>
 
+      <h1>
+        Lia<br>
+        Bansmann
+      </h1>
 
-      <footer>
-        © 2026 Lia Bansmann · All rights reserved.
-      </footer>
+      <p class="hero-tagline">
+        Stories are better in the dark.
+      </p>
 
-    </section>
+      <p class="hero-text">
+        Düstere Welten, gefährliche Entscheidungen
+        und Charaktere, denen man wahrscheinlich
+        besser nicht vertrauen sollte.
+      </p>
 
-  </main>
+      <div class="scroll-indicator">
+
+        Discover the stories
+
+        <div class="scroll-line"></div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- BOOKS -->
+
+  <section
+    id="books"
+    class="section books-section"
+  >
+
+    <div class="section-inner">
+
+      <div class="section-heading">
+
+        <p class="section-number">
+          01 — The Stories
+        </p>
+
+        <h2>
+          Books
+        </h2>
+
+        <p>
+          Welten zum Verlieren.
+          Charaktere zum Lieben.
+          Entscheidungen zum Bereuen.
+        </p>
+
+      </div>
+
+
+      <div class="series">
+
+  <div class="series-header">
+
+    <p class="series-label">
+      The After Us Series
+    </p>
+
+    <h3>
+      After Us
+    </h3>
+
+    <p class="series-description">
+      Eine düstere dystopische Buchreihe über Macht,
+      Überleben, gefährliche Loyalitäten und die Geheimnisse
+      einer Welt, die längst nicht mehr dieselbe ist.
+    </p>
+
+  </div>
+
+
+  <div class="series-books">
+
+
+    <!-- BAND 1 -->
+
+    <article class="book-card">
+
+      <div class="book-number">
+        Book One
+      </div>
+
+      <p class="book-label">
+        Published
+      </p>
+
+      <h4>
+        And After Us<br>
+        The Shadows
+      </h4>
+
+      <p class="book-genre">
+        Dark Dystopian Romance
+      </p>
+
+      <p class="book-description">
+        Eine postapokalyptische Welt,
+        gefährliche Loyalitäten und eine Organisation,
+        deren Geheimnisse besser verborgen geblieben wären.
+      </p>
+
+      <div class="book-actions">
+
+        <a
+          class="button primary"
+          href="after-us/"
+        >
+          Enter the World
+        </a>
+
+        <a
+          class="button secondary"
+          href="https://amzn.eu/d/0i41bcvM"
+          target="_blank"
+          rel="noopener"
+        >
+          Buy the Book
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- BAND 2 -->
+
+    <article class="book-card">
+
+      <div class="book-number">
+        Book Two
+      </div>
+
+      <p class="book-label">
+        The Story Continues
+      </p>
+
+      <h4>
+        And After Us<br>
+        The Ashes
+      </h4>
+
+      <p class="book-genre">
+        Dark Dystopian Romance
+      </p>
+
+      <p class="book-description">
+        Die Geschichte geht weiter.
+        Hier kannst du später die Kurzbeschreibung
+        von And After Us The Ashes einsetzen.
+      </p>
+
+      <div class="book-actions">
+
+        <!-- später ggf. eigene Unterseite -->
+        <a
+          class="button secondary"
+          href="#"
+        >
+          Discover
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+
+<!-- SPÄTERE NEUE BUCHREIHE -->
+
+<div class="future-series">
+
+  <span class="future-symbol">
+    ✦
+  </span>
+
+  <p>
+    More worlds are waiting in the dark.
+  </p>
+
+</div>
+
+        </article>
+
+
+        <!-- PLATZHALTER FÜR SPÄTER -->
+
+        <article class="book-card future">
+
+          <div>
+
+            <div class="future-symbol">
+              ✦
+            </div>
+
+            <p class="future-text">
+              More stories are waiting
+              in the shadows.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section
+    id="about"
+    class="section"
+  >
+
+    <div class="section-inner about-grid">
+
+
+      <div class="about-ornament">
+        ✦
+      </div>
+
+
+      <div class="about-content">
+
+        <p class="section-number">
+          02 — Behind the Stories
+        </p>
+
+        <h2>
+          About Lia
+        </h2>
+
+        <p>
+          30 Jahre alt und aus Deutschland.
+          Wenn Lia nicht gerade selbst Geschichten schreibt,
+          liebt sie es, beim Lesen in fremde Welten einzutauchen
+          und für eine Weile die Realität hinter sich zu lassen.
+        </p>
+
+        <p>
+          Abseits der Bücher reist sie gerne,
+          entdeckt neue Orte und ist immer bereit,
+          Neues auszuprobieren – denn die besten Geschichten
+          beginnen schließlich oft dort,
+          wo die Komfortzone endet.
+        </p>
+
+        <div class="about-actions">
+
+          <a
+            class="button secondary"
+            href="author.html"
+          >
+            More About the Author
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOCIAL -->
+
+  <section class="social-section">
+
+    <h2 class="social-title">
+      Follow the Stories
+    </h2>
+
+    <p class="social-text">
+      Schreibupdates, Buchcontent und wahrscheinlich
+      viel zu viele Gedanken über fiktive Männer.
+    </p>
+
+    <a
+      class="button secondary"
+      href="https://www.instagram.com/lia.writesstories/"
+      target="_blank"
+      rel="noopener"
+    >
+      Instagram
+    </a>
+
+  </section>
+
+
+  <footer>
+    © 2026 Lia Bansmann · All rights reserved.
+  </footer>
 
 </body>
 </html>
