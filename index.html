@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lia Bansmann | And After Us The Shadows</title>
+
+  <meta
+    name="description"
+    content="Die offizielle Website von Lia Bansmann und And After Us The Shadows."
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family: Georgia, "Times New Roman", serif;
+
+      background:
+        linear-gradient(
+          rgba(5, 5, 8, 0.72),
+          rgba(5, 5, 8, 0.94)
+        ),
+        url("cover.png");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+
+      color: #f4eee6;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       PAGE
+       ======================================== */
+
+    .page {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 44px 20px;
+    }
+
+    .hero {
+      position: relative;
+
+      width: 100%;
+      max-width: 900px;
+
+      padding: 60px 52px;
+
+      text-align: center;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(17, 17, 24, 0.78),
+          rgba(8, 8, 12, 0.88)
+        );
+
+      backdrop-filter: blur(14px);
+
+      box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.55),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+
+      overflow: hidden;
+    }
+
+    /* dezente goldene Linie */
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 15%;
+      right: 15%;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 164, 106, 0.8),
+          transparent
+        );
+    }
+
+    /* ========================================
+       HEADER
+       ======================================== */
+
+    .author-name {
+      margin-bottom: 30px;
+
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+
+      color: #c9a46a;
+    }
+
+    .eyebrow {
+      margin-bottom: 15px;
+
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+
+      color: #9f9180;
+    }
+
+    h1 {
+      margin-bottom: 18px;
+
+      font-size: clamp(3rem, 8vw, 5.8rem);
+
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+
+      font-weight: 500;
+
+      color: #fffaf4;
+    }
+
+    .subtitle {
+      margin-bottom: 34px;
+
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+
+      color: #d8c6ad;
+    }
+
+    /* ========================================
+       INTRO
+       ======================================== */
+
+    .intro {
+      max-width: 650px;
+
+      margin: 0 auto 36px;
+
+      font-size: 1.08rem;
+
+      color: #ddd2c5;
+    }
+
+    /* ========================================
+       DIVIDER
+       ======================================== */
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 14px;
+
+      width: 70%;
+
+      margin: 0 auto 36px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+
+      flex: 1;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 164, 106, 0.4)
+        );
+    }
+
+    .divider::after {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(201, 164, 106, 0.4),
+          transparent
+        );
+    }
+
+    .divider-symbol {
+      color: #c9a46a;
+
+      font-size: 0.8rem;
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 14px;
+
+      margin-top: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+
+      padding: 14px 25px;
+
+      border-radius: 999px;
+
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      border: 1px solid #c9a46a;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d5b47d,
+          #b88d52
+        );
+
+      color: #130f0c;
+
+      box-shadow:
+        0 8px 28px rgba(201, 164, 106, 0.13);
+    }
+
+    .button.primary:hover {
+      box-shadow:
+        0 10px 35px rgba(201, 164, 106, 0.25);
+    }
+
+    .button.secondary {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+
+      background:
+        rgba(255, 255, 255, 0.015);
+
+      color: #eee3d6;
+    }
+
+    .button.secondary:hover {
+      background:
+        rgba(255, 255, 255, 0.055);
+
+      border-color:
+        rgba(201, 164, 106, 0.45);
+    }
+
+    /* besonderer World Button */
+
+    .button.world {
+      position: relative;
+
+      border:
+        1px solid rgba(201, 164, 106, 0.5);
+
+      color: #d9bd92;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(201, 164, 106, 0.08),
+          rgba(255, 255, 255, 0.01)
+        );
+
+      overflow: hidden;
+    }
+
+    .button.world::after {
+      content: "›";
+
+      margin-left: 10px;
+
+      font-size: 1.1rem;
+
+      transition:
+        transform 0.2s ease;
+    }
+
+    .button.world:hover::after {
+      transform: translateX(4px);
+    }
+
+    .button.world:hover {
+      background:
+        rgba(201, 164, 106, 0.1);
+
+      box-shadow:
+        0 8px 30px rgba(201, 164, 106, 0.09);
+    }
+
+    /* ========================================
+       SMALL NOTE
+       ======================================== */
+
+    .world-note {
+      margin-top: 26px;
+
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      color: #766b60;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+
+    footer {
+      margin-top: 45px;
+
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+
+      color: #756a5f;
+    }
+
+    /* ========================================
+       MOBILE
+       ======================================== */
+
+    @media (max-width: 620px) {
+
+      .page {
+        padding: 24px 14px;
+      }
+
+      .hero {
+        padding: 44px 24px;
+
+        border-radius: 24px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .divider {
+        width: 90%;
+      }
+
+      .intro {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+    <section class="hero">
+
+      <p class="author-name">
+        Lia Bansmann
+      </p>
+
+      <p class="eyebrow">
+        Dark Dystopian Romance
+      </p>
+
+      <h1>
+        And After Us<br />
+        The Shadows
+      </h1>
+
+      <p class="subtitle">
+        A novel by Lia Bansmann
+      </p>
+
+
+      <p class="intro">
+        Eine düstere Geschichte über Überleben, Loyalität,
+        gefährliche Entscheidungen und die Menschen,
+        denen man besser niemals vertrauen sollte.
+      </p>
+
+
+      <div class="divider">
+        <span class="divider-symbol">◆</span>
+      </div>
+
+
+      <div class="buttons">
+
+        <!-- BUCH KAUFEN -->
+
+        <a
+          class="button primary"
+          href="https://amzn.eu/d/0i41bcvM"
+          target="_blank"
+          rel="noopener"
+        >
+          Buch kaufen
+        </a>
+
+
+        <!-- ABOUT THE AUTHOR -->
+
+        <a
+          class="button secondary"
+          href="author.html"
+        >
+          About the Author
+        </a>
+
+
+        <!-- WORLD OF AFTER US -->
+
+        <a
+          class="button world"
+          href="worldNWO.html"
+        >
+          Enter the World
+        </a>
+
+      </div>
+
+
+      <p class="world-note">
+        Some stories don't end on the final page.
+      </p>
+
+
+      <footer>
+        © 2026 Lia Bansmann · All rights reserved.
+      </footer>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
