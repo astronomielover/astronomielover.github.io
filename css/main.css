@@ -1104,8 +1104,36 @@
   .series-image {
     width: 100%;
     height: auto;
-
-    object-fit: contain;
+     
+     object-fit: contain;
   }
 
+}
+
+.series-cover {
+  margin-top: 24px;
+  width: 110px;
+}
+
+.series-cover img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border: 1px solid rgba(201, 164, 106, 0.2);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.45);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.series-cover img:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.55);
 }
