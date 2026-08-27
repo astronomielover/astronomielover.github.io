@@ -2,7 +2,10 @@
    CHAPTER.CSS
    Kapitel-Leseprobe
    ========================================= */
-
+body {
+  background: #f7f3ed;
+  color: #171717;
+}
 .chapter {
   max-width: 42rem;
   margin: 0 auto;
