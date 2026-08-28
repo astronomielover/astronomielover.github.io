@@ -207,15 +207,19 @@
 
    const route = [
 
-  [39.7392, -104.9903],  // Denver, Colorado
+       [39.7392, -104.9903],  // Denver, Colorado
 
-  [41.5875, -109.2029],  // Rock Springs, Wyoming
+       [41.1400, -104.8202],  // Cheyenne
 
-  [43.4799, -110.7624],  // Jackson, Wyoming
+       [40.7316, -106.2836],  // Überfall North Park
 
-  [47.4220, -121.4130],  // Snoqualmie Pass, Washington
+       [41.5875, -109.2029],  // Rock Springs, Wyoming
 
-  [47.6062, -122.3321]   // Seattle, Washington
+       [43.4799, -110.7624],  // Jackson, Wyoming
+
+       [47.4220, -121.4130],  // Snoqualmie Pass, Washington
+
+       [47.6062, -122.3321]   // Seattle, Washington
 
 ];
 
@@ -272,16 +276,68 @@
 
     `);
 
+      L.marker(route[1], {
+          icon: routeIcon
+      })
+          .addTo(map)
+          .bindPopup(`
 
+      <p class="popup-classification">
+        Route Point 02
+      </p>
 
-    L.marker(route[1], {
+      <h3 class="popup-title">
+        Zwischenstopp
+      </h3>
+
+      <div class="popup-info">
+
+        <strong>Location:</strong>
+        [Cheyenne]
+
+      </div>
+
+      <p class="popup-note">
+        Kapitel 7. Hier trifft Lethea auf die "Walking Survivors".
+      </p>
+
+    `);
+
+      L.marker(route[2], {
+          icon: routeIcon
+      })
+          .addTo(map)
+          .bindPopup(`
+
+      <p class="popup-classification">
+        Route Point 03
+      </p>
+
+      <h3 class="popup-title">
+        Überfall
+      </h3>
+
+      <div class="popup-info">
+
+        <strong>Location:</strong>
+        [North Park, Colorado]
+
+      </div>
+
+      <p class="popup-note">
+        Die Erinnerungen an diese Nacht würde sie am liebsten für immer löschen.
+      </p>
+
+    `);
+
+    L.marker(route[3], {
       icon: routeIcon
     })
     .addTo(map)
     .bindPopup(`
 
       <p class="popup-classification">
-        Route Point 02
+        Route Point 04
       </p>
 
       <h3 class="popup-title">
@@ -296,7 +352,89 @@
       </div>
 
       <p class="popup-note">
-        Kapitel 1.
+        Kapitel 1. Kurzer Zwischenstopp.
+      </p>
+
+    `);
+
+      L.marker(route[4], {
+          icon: routeIcon
+      })
+          .addTo(map)
+          .bindPopup(`
+
+      <p class="popup-classification">
+        Route Point 05
+      </p>
+
+      <h3 class="popup-title">
+        Zwischenstopp
+      </h3>
+
+      <div class="popup-info">
+
+        <strong>Location:</strong>
+        [Jackson]
+
+      </div>
+
+      <p class="popup-note">
+        Kapitel 6. Lethea trifft seit Wochen wieder auf Menschen, sogar Kinder sind dabei.
+      </p>
+
+    `);
+
+      L.marker(route[5], {
+          icon: routeIcon
+      })
+          .addTo(map)
+          .bindPopup(`
+
+      <p class="popup-classification">
+        Route Point 06
+      </p>
+
+      <h3 class="popup-title">
+        Überfall
+      </h3>
+
+      <div class="popup-info">
+
+        <strong>Location:</strong>
+        [Snoqualmie Pass]
+
+      </div>
+
+      <p class="popup-note">
+        Kapitel 10. Lethea trifft auf Jäger.
+      </p>
+
+    `);
+
+
+      L.marker(route[6], {
+          icon: routeIcon
+      })
+          .addTo(map)
+          .bindPopup(`
+
+      <p class="popup-classification">
+        Route Point 06
+      </p>
+
+      <h3 class="popup-title">
+        Ziel
+      </h3>
+
+      <div class="popup-info">
+
+        <strong>Location:</strong>
+        [Seattle]
+
+      </div>
+
+      <p class="popup-note">
+        Kapitel 12. Hier erhofft sich Lethea, endlich einen sicheren Ort zu finden.
       </p>
 
     `);
@@ -333,6 +471,9 @@
         NWO Academy
         <br>
 
+        <strong>Location:</strong>
+        [North Bend]
+
         <strong>Security:</strong>
         MIDDLE
 
@@ -367,7 +508,10 @@
         <strong>Classification:</strong>
         NWO Research
         <br>
-        
+
+        <strong>Location:</strong>
+        [Tacoma]
+
         <strong>Security:</strong>
         MIDDLE
 
@@ -401,6 +545,9 @@
         <strong>Classification:</strong>
          NWO Production & Engineering Facility.
         <br>
+
+        <strong>Location:</strong>
+        [Everett]
         
         <strong>Security:</strong>
         MIDDLE
@@ -434,7 +581,10 @@
         <strong>Classification:</strong>
         NWO Breeding & Logistics Facility.
         <br>
-        
+
+        <strong>Location:</strong>
+        [Duvall]
+
         <strong>Security:</strong>
         LOW
 
@@ -468,7 +618,9 @@
         <strong>Classification:</strong>
         NWO Agricultural & Supply Facility.
         <br>
-        
+
+        <strong>Location:</strong>
+        [Yakima Valley]
         <strong>Security:</strong>
         LOW
 
@@ -502,6 +654,9 @@
         <strong>Classification:</strong>
         NWO Intelligence & Communications Facility.
         <br>
+
+        <strong>Location:</strong>
+        [Cascade Mountains]
         
         <strong>Security:</strong>
         HIGH
@@ -536,7 +691,10 @@
         <strong>Classification:</strong>
         Headquarter.
         <br>
-        
+
+        <strong>Location:</strong>
+        [Olympia]
+
         <strong>Security:</strong>
         HIGH
 
@@ -556,7 +714,7 @@
     ============================================
     */
 
-
+/*
     L.marker(
       [35.0844, -106.6504],
       {
@@ -592,7 +750,7 @@
 
     `);
 
-
+*/
 
     /*
     ============================================
