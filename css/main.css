@@ -1081,7 +1081,132 @@
     contrast(1.05)
     saturate(0.9);
 }
+/* =========================
+   SHOP SECTION
+========================= */
 
+html {
+    scroll-behavior: smooth;
+}
+
+#shop {
+    scroll-margin-top: 100px;
+}
+
+.shop-intro {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+    .shop-intro h3 {
+        font-size: clamp(32px, 5vw, 56px);
+        font-weight: 400;
+        margin: 15px 0 25px;
+    }
+
+    .shop-intro .series-line {
+        margin: 30px auto;
+    }
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.shop-card {
+    position: relative;
+    overflow: hidden;
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+    .shop-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .shop-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .shop-card:hover img {
+        transform: scale(1.04);
+    }
+
+.shop-card-content {
+    padding: 25px;
+    text-align: center;
+}
+
+    .shop-card-content h4 {
+        font-size: 24px;
+        font-weight: 400;
+        margin: 0 0 12px;
+    }
+
+    .shop-card-content p {
+        font-size: 14px;
+        line-height: 1.7;
+        opacity: 0.7;
+    }
+
+.shop-actions {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.shop-status {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .shop-card {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .shop-intro {
+        margin-bottom: 35px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .shop-card,
+    .shop-card img {
+        transition: none;
+    }
+
+        .shop-card:hover,
+        .shop-card:hover img {
+            transform: none;
+        }
+}
 /* =========================================
    MOBILE
    ========================================= */
