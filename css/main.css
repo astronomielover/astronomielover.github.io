@@ -955,3 +955,25 @@ html {
     text-transform: uppercase;
     color: #a4845c;
 }
+
+/* =========================================
+   FOOTER LINKS
+   ========================================= */
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+    .footer-links a {
+        color: #a4845c;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .footer-links a:hover {
+            color: #e8d6ba;
+        }
